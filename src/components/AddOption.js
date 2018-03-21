@@ -1,14 +1,19 @@
 import React from "react";
 
 export default class AddOption extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleAddOption=this.handleAddOption.bind(this);
-        this.state = {
-            error: undefined
-        };
-    }
-    handleAddOption(e) {
+    state = { // new syntax. Instead of str. 10-12
+        error: undefined
+    };
+    // constructor(props) {
+    //     super(props);
+    //     this.handleAddOption=this.handleAddOption.bind(this);
+    //     // this.state = {
+    //     //     error: undefined
+    //     // };
+    // }
+
+    // handleAddOption(e) {
+    handleAddOption = (e) => { // new style, no need to get bound manualy
         e.preventDefault();
         const option = e.target.elements.option.value.trim();
         // precise formula to fetch value from input is e.target.elements.option.value
@@ -23,8 +28,9 @@ export default class AddOption extends React.Component {
         this.setState(() => ({ error: error }));
         if (!error) {
             e.target.elements.option.value = "";
-        }
-    }
+        };
+    };
+
     render() {
         return(
             <div>
@@ -35,5 +41,5 @@ export default class AddOption extends React.Component {
                 </form>
             </div>
         );
-    }
-}
+    };
+};

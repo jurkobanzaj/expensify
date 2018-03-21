@@ -2,6 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import IndecisionApp from "./components/IndecisionApp"; // imports class exported by default from AddOption file
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+const Layout = (props) => {
+    return(
+        <div>
+            <p>Header</p>
+            {props.children}
+            <p>Footer</p>
+        </div>
+    );
+};
 
-class OldSyntax
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
