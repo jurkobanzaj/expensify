@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import 'normalize.css/normalize.scss';
-import './styles/Styles.scss'
+import AppRouter from './routers/AppRouter'
+import './styles/base/reset.scss';
+import './styles/Styles.scss';
 
-ReactDOM.render(<p>This is my boiler plate</p>, document.getElementById('app'));
+ReactDOM.render(<AppRouter />, document.getElementById('app'));

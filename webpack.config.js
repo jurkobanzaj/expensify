@@ -22,6 +22,7 @@ module.exports = {
     },
     devtool: "cheap-module-eval-source-map",
     devServer: {
-        contentBase: (__dirname, "public")
+        contentBase: (__dirname, "public"),
+        historyApiFallback: true
     }
 };
