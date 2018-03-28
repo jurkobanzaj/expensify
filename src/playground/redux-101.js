@@ -64,6 +64,10 @@ const store = createStore((state = { count: 0 }, action) => {
 
 });
 
+const unsubscribe = store.subscribe(() => { // toggle tracking of state changes when called 
+    console.log(store.getState());
+});
+
 store.dispatch(incrementCount()); // Call of previously declared Action
 
 store.dispatch(incrementCount({ incrementBy: 5 })); // Passing custom data
