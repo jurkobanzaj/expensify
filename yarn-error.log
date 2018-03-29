@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add node-sass@4.5.3
+  C:\Program Files\nodejs\node.exe C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run dev-sever
 
 PATH: 
-  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jurko Banzaj\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jurko Banzaj\AppData\Roaming\npm
+  C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jurko Banzaj\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jurko Banzaj\AppData\Roaming\npm
 
 Yarn version: 
   1.5.1
@@ -15,7 +15,7 @@ Platform:
 
 npm manifest: 
   {
-    "name": "indecision",
+    "name": "expensify",
     "version": "1.0.0",
     "main": "index.js",
     "author": "Yuriy Piddubnyak",
@@ -34,10 +34,14 @@ npm manifest:
       "babel-preset-react": "6.24.1",
       "css-loader": "0.28.4",
       "live-server": "^1.2.0",
+      "node-sass": "^4.7.2",
+      "normalize.css": "7.0.0",
       "npm": "^5.7.1",
       "react": "16.0.0",
       "react-dom": "16.0.0",
       "react-modal": "2.2.2",
+      "react-router-dom": "4.2.2",
+      "redux": "3.7.2",
       "sass-loader": "6.0.6",
       "style-loader": "0.18.2",
       "validator": "8.0.0",
@@ -129,6 +133,10 @@ Lockfile:
   alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
+  
+  amdefine@>=0.0.4:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   
   ansi-align@^2.0.0:
     version "2.0.0"
@@ -296,6 +304,10 @@ Lockfile:
   async-each@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
+  
+  async-foreach@^0.1.3:
+    version "0.1.3"
+    resolved "https://registry.yarnpkg.com/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
   
   async@^1.5.2:
     version "1.5.2"
@@ -1288,6 +1300,10 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
   
+  caseless@~0.11.0:
+    version "0.11.0"
+    resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.11.0.tgz#715b96ea9841593cc33067923f5ec60ebda4f7d7"
+  
   caseless@~0.12.0:
     version "0.12.0"
     resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
@@ -1299,7 +1315,7 @@ Lockfile:
       align-text "^0.1.3"
       lazy-cache "^1.0.3"
   
-  chalk@^1.1.3:
+  chalk@^1.1.1, chalk@^1.1.3:
     version "1.1.3"
     resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
     dependencies:
@@ -1507,6 +1523,10 @@ Lockfile:
     version "2.15.0"
     resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.0.tgz#ad2a23a1c3b036e392469b8012cec6b33b4c1322"
   
+  commander@^2.9.0:
+    version "2.15.1"
+    resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
+  
   commondir@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -1676,6 +1696,13 @@ Lockfile:
       ripemd160 "^2.0.0"
       safe-buffer "^5.0.1"
       sha.js "^2.4.8"
+  
+  cross-spawn@^3.0.0:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
+    dependencies:
+      lru-cache "^4.0.1"
+      which "^1.2.9"
   
   cross-spawn@^5.0.1:
     version "5.1.0"
@@ -2608,6 +2635,22 @@ Lockfile:
       strip-ansi "^3.0.1"
       wide-align "^1.1.0"
   
+  gaze@^1.0.0:
+    version "1.1.2"
+    resolved "https://registry.yarnpkg.com/gaze/-/gaze-1.1.2.tgz#847224677adb8870d679257ed3388fdb61e40105"
+    dependencies:
+      globule "^1.0.0"
+  
+  generate-function@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/generate-function/-/generate-function-2.0.0.tgz#6858fe7c0969b7d4e9093337647ac79f60dfbe74"
+  
+  generate-object-property@^1.1.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/generate-object-property/-/generate-object-property-1.2.0.tgz#9c0e1c40308ce804f4783618b937fa88f99d50d0"
+    dependencies:
+      is-property "^1.0.0"
+  
   genfun@^4.0.1:
     version "4.0.1"
     resolved "https://registry.yarnpkg.com/genfun/-/genfun-4.0.1.tgz#ed10041f2e4a7f1b0a38466d17a5c3e27df1dfc1"
@@ -2667,7 +2710,17 @@ Lockfile:
       is-glob "^3.1.0"
       path-dirname "^1.0.0"
   
-  glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@~7.1.2:
+  glob@^6.0.4:
+    version "6.0.4"
+    resolved "https://registry.yarnpkg.com/glob/-/glob-6.0.4.tgz#0f08860f6a155127b2fadd4f9ce24b1aab6e4d22"
+    dependencies:
+      inflight "^1.0.4"
+      inherits "2"
+      minimatch "2 || 3"
+      once "^1.3.0"
+      path-is-absolute "^1.0.0"
+  
+  glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@~7.1.1, glob@~7.1.2:
     version "7.1.2"
     resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
     dependencies:
@@ -2697,6 +2750,14 @@ Lockfile:
       object-assign "^4.0.1"
       pify "^2.0.0"
       pinkie-promise "^2.0.0"
+  
+  globule@^1.0.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/globule/-/globule-1.2.0.tgz#1dc49c6822dd9e8a2fa00ba2a295006e8664bd09"
+    dependencies:
+      glob "~7.1.1"
+      lodash "~4.17.4"
+      minimatch "~3.0.2"
   
   got@^6.7.1:
     version "6.7.1"
@@ -2729,6 +2790,15 @@ Lockfile:
   har-schema@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/har-schema/-/har-schema-2.0.0.tgz#a94c2224ebcac04782a0d9035521f24735b7ec92"
+  
+  har-validator@~2.0.6:
+    version "2.0.6"
+    resolved "https://registry.yarnpkg.com/har-validator/-/har-validator-2.0.6.tgz#cdcbc08188265ad119b6a5a7c8ab70eecfb5d27d"
+    dependencies:
+      chalk "^1.1.1"
+      commander "^2.9.0"
+      is-my-json-valid "^2.12.4"
+      pinkie-promise "^2.0.0"
   
   har-validator@~4.2.1:
     version "4.2.1"
@@ -2833,6 +2903,16 @@ Lockfile:
       hoek "4.x.x"
       sntp "2.x.x"
   
+  history@^4.7.2:
+    version "4.7.2"
+    resolved "https://registry.yarnpkg.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
+    dependencies:
+      invariant "^2.2.1"
+      loose-envify "^1.2.0"
+      resolve-pathname "^2.2.0"
+      value-equal "^0.4.0"
+      warning "^3.0.0"
+  
   hmac-drbg@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -2848,6 +2928,10 @@ Lockfile:
   hoek@4.x.x:
     version "4.2.1"
     resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
+  
+  hoist-non-react-statics@^2.3.0:
+    version "2.5.0"
+    resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
   
   home-or-tmp@^2.0.0:
     version "2.0.0"
@@ -3003,6 +3087,10 @@ Lockfile:
     version "0.1.4"
     resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   
+  in-publish@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/in-publish/-/in-publish-2.0.0.tgz#e20ff5e3a2afc2690320b6dc552682a9c7fadf51"
+  
   indent-string@^2.1.0:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"
@@ -3058,6 +3146,12 @@ Lockfile:
   interpret@^1.0.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
+  
+  invariant@^2.2.1:
+    version "2.2.4"
+    resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
+    dependencies:
+      loose-envify "^1.0.0"
   
   invariant@^2.2.2:
     version "2.2.3"
@@ -3216,6 +3310,20 @@ Lockfile:
       global-dirs "^0.1.0"
       is-path-inside "^1.0.0"
   
+  is-my-ip-valid@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/is-my-ip-valid/-/is-my-ip-valid-1.0.0.tgz#7b351b8e8edd4d3995d4d066680e664d94696824"
+  
+  is-my-json-valid@^2.12.4:
+    version "2.17.2"
+    resolved "https://registry.yarnpkg.com/is-my-json-valid/-/is-my-json-valid-2.17.2.tgz#6b2103a288e94ef3de5cf15d29dd85fc4b78d65c"
+    dependencies:
+      generate-function "^2.0.0"
+      generate-object-property "^1.1.0"
+      is-my-ip-valid "^1.0.0"
+      jsonpointer "^4.0.0"
+      xtend "^4.0.0"
+  
   is-npm@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/is-npm/-/is-npm-1.0.0.tgz#f2fb63a65e4905b406c86072765a1a4dc793b9f4"
@@ -3279,6 +3387,10 @@ Lockfile:
   is-primitive@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/is-primitive/-/is-primitive-2.0.0.tgz#207bab91638499c07b2adf240a41a87210034575"
+  
+  is-property@^1.0.0:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/is-property/-/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
   
   is-redirect@^1.0.0:
     version "1.0.0"
@@ -3347,7 +3459,7 @@ Lockfile:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   
-  js-base64@^2.1.9:
+  js-base64@^2.1.8, js-base64@^2.1.9:
     version "2.4.3"
     resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
   
@@ -3415,6 +3527,10 @@ Lockfile:
   jsonparse@^1.2.0:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
+  
+  jsonpointer@^4.0.0:
+    version "4.0.1"
+    resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.0.1.tgz#4fd92cb34e0e9db3c89c8622ecf51f9b978c6cb9"
   
   jsprim@^1.2.2:
     version "1.4.1"
@@ -3573,6 +3689,10 @@ Lockfile:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/lockfile/-/lockfile-1.0.3.tgz#2638fc39a0331e9cac1a04b71799931c9c50df79"
   
+  lodash-es@^4.2.1:
+    version "4.17.7"
+    resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.7.tgz#db240a3252c3dd8360201ac9feef91ac977ea856"
+  
   lodash._baseuniq@~4.6.0:
     version "4.6.0"
     resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -3588,17 +3708,25 @@ Lockfile:
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/lodash._root/-/lodash._root-3.0.1.tgz#fba1c4524c19ee9a5f8136b4609f017cf4ded692"
   
+  lodash.assign@^4.2.0:
+    version "4.2.0"
+    resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
+  
   lodash.camelcase@^4.3.0:
     version "4.3.0"
     resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   
-  lodash.clonedeep@~4.5.0:
+  lodash.clonedeep@^4.3.2, lodash.clonedeep@~4.5.0:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   
   lodash.memoize@^4.1.2:
     version "4.1.2"
     resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
+  
+  lodash.mergewith@^4.6.0:
+    version "4.6.1"
+    resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
   
   lodash.tail@^4.1.1:
     version "4.1.1"
@@ -3620,7 +3748,7 @@ Lockfile:
     version "3.10.1"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
   
-  lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0:
+  lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@~4.17.4:
     version "4.17.5"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
   
@@ -3628,7 +3756,7 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
   
-  loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
+  loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
     dependencies:
@@ -3728,7 +3856,7 @@ Lockfile:
       errno "^0.1.3"
       readable-stream "^2.0.1"
   
-  meow@^3.3.0:
+  meow@^3.3.0, meow@^3.7.0:
     version "3.7.0"
     resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
     dependencies:
@@ -3824,7 +3952,7 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
   
-  minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.4:
+  "minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.4, minimatch@~3.0.2:
     version "3.0.4"
     resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
     dependencies:
@@ -3967,6 +4095,10 @@ Lockfile:
     version "2.9.2"
     resolved "https://registry.yarnpkg.com/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
   
+  nan@^2.3.2:
+    version "2.10.0"
+    resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
+  
   nanomatch@^1.2.9:
     version "1.2.9"
     resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.9.tgz#879f7150cb2dab7a471259066c104eee6e0fa7c2"
@@ -4011,7 +4143,7 @@ Lockfile:
     version "0.7.1"
     resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.1.tgz#9da611ea08982f4b94206b3beb4cc9665f20c300"
   
-  node-gyp@^3.6.2:
+  node-gyp@^3.3.1, node-gyp@^3.6.2:
     version "3.6.2"
     resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.2.tgz#9bfbe54562286284838e750eac05295853fa1c60"
     dependencies:
@@ -4073,6 +4205,30 @@ Lockfile:
       tar "^2.2.1"
       tar-pack "^3.4.0"
   
+  node-sass@^4.7.2:
+    version "4.7.2"
+    resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.7.2.tgz#9366778ba1469eb01438a9e8592f4262bcb6794e"
+    dependencies:
+      async-foreach "^0.1.3"
+      chalk "^1.1.1"
+      cross-spawn "^3.0.0"
+      gaze "^1.0.0"
+      get-stdin "^4.0.1"
+      glob "^7.0.3"
+      in-publish "^2.0.0"
+      lodash.assign "^4.2.0"
+      lodash.clonedeep "^4.3.2"
+      lodash.mergewith "^4.6.0"
+      meow "^3.7.0"
+      mkdirp "^0.5.1"
+      nan "^2.3.2"
+      node-gyp "^3.3.1"
+      npmlog "^4.0.0"
+      request "~2.79.0"
+      sass-graph "^2.2.4"
+      stdout-stream "^1.4.0"
+      "true-case-path" "^1.0.2"
+  
   "nopt@2 || 3":
     version "3.0.6"
     resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
@@ -4113,6 +4269,10 @@ Lockfile:
       prepend-http "^1.0.0"
       query-string "^4.1.0"
       sort-keys "^1.0.0"
+  
+  normalize.css@7.0.0:
+    version "7.0.0"
+    resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
   
   npm-bundled@^1.0.1:
     version "1.0.3"
@@ -4314,7 +4474,7 @@ Lockfile:
       wrappy "~1.0.2"
       write-file-atomic "~2.1.0"
   
-  "npmlog@0 || 1 || 2 || 3 || 4", "npmlog@2 || ^3.1.0 || ^4.0.0", npmlog@^4.0.2, npmlog@~4.1.2:
+  "npmlog@0 || 1 || 2 || 3 || 4", "npmlog@2 || ^3.1.0 || ^4.0.0", npmlog@^4.0.0, npmlog@^4.0.2, npmlog@~4.1.2:
     version "4.1.2"
     resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
     dependencies:
@@ -4590,6 +4750,12 @@ Lockfile:
   path-to-regexp@0.1.7:
     version "0.1.7"
     resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
+  
+  path-to-regexp@^1.7.0:
+    version "1.7.0"
+    resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
+    dependencies:
+      isarray "0.0.1"
   
   path-type@^1.0.0:
     version "1.1.0"
@@ -4954,7 +5120,7 @@ Lockfile:
     dependencies:
       read "1"
   
-  prop-types@^15.5.10, prop-types@^15.6.0:
+  prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0:
     version "15.6.1"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
     dependencies:
@@ -5049,6 +5215,10 @@ Lockfile:
   qs@6.5.1, qs@~6.5.1:
     version "6.5.1"
     resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
+  
+  qs@~6.3.0:
+    version "6.3.2"
+    resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.2.tgz#e75bd5f6e268122a2a0e0bda630b2550c166502c"
   
   qs@~6.4.0:
     version "6.4.0"
@@ -5151,6 +5321,29 @@ Lockfile:
       exenv "1.2.0"
       prop-types "^15.5.10"
       react-dom-factories "^1.0.0"
+  
+  react-router-dom@4.2.2:
+    version "4.2.2"
+    resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
+    dependencies:
+      history "^4.7.2"
+      invariant "^2.2.2"
+      loose-envify "^1.3.1"
+      prop-types "^15.5.4"
+      react-router "^4.2.0"
+      warning "^3.0.0"
+  
+  react-router@^4.2.0:
+    version "4.2.0"
+    resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
+    dependencies:
+      history "^4.7.2"
+      hoist-non-react-statics "^2.3.0"
+      invariant "^2.2.2"
+      loose-envify "^1.3.1"
+      path-to-regexp "^1.7.0"
+      prop-types "^15.5.4"
+      warning "^3.0.0"
   
   react@16.0.0:
     version "16.0.0"
@@ -5297,6 +5490,15 @@ Lockfile:
     dependencies:
       balanced-match "^0.4.2"
   
+  redux@3.7.2:
+    version "3.7.2"
+    resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
+    dependencies:
+      lodash "^4.2.1"
+      lodash-es "^4.2.1"
+      loose-envify "^1.1.0"
+      symbol-observable "^1.0.3"
+  
   regenerate@^1.2.1:
     version "1.3.3"
     resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.3.3.tgz#0c336d3980553d755c39b586ae3b20aa49c82b7f"
@@ -5441,6 +5643,31 @@ Lockfile:
       tunnel-agent "^0.6.0"
       uuid "^3.0.0"
   
+  request@~2.79.0:
+    version "2.79.0"
+    resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
+    dependencies:
+      aws-sign2 "~0.6.0"
+      aws4 "^1.2.1"
+      caseless "~0.11.0"
+      combined-stream "~1.0.5"
+      extend "~3.0.0"
+      forever-agent "~0.6.1"
+      form-data "~2.1.1"
+      har-validator "~2.0.6"
+      hawk "~3.1.3"
+      http-signature "~1.1.0"
+      is-typedarray "~1.0.0"
+      isstream "~0.1.2"
+      json-stringify-safe "~5.0.1"
+      mime-types "~2.1.7"
+      oauth-sign "~0.8.1"
+      qs "~6.3.0"
+      stringstream "~0.0.4"
+      tough-cookie "~2.3.0"
+      tunnel-agent "~0.4.1"
+      uuid "^3.0.0"
+  
   request@~2.83.0:
     version "2.83.0"
     resolved "https://registry.yarnpkg.com/request/-/request-2.83.0.tgz#ca0b65da02ed62935887808e6f510381034e3356"
@@ -5483,6 +5710,10 @@ Lockfile:
   resolve-from@^4.0.0:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
+  
+  resolve-pathname@^2.2.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
   
   resolve-url@^0.2.1:
     version "0.2.1"
@@ -5531,6 +5762,15 @@ Lockfile:
     dependencies:
       ret "~0.1.10"
   
+  sass-graph@^2.2.4:
+    version "2.2.4"
+    resolved "https://registry.yarnpkg.com/sass-graph/-/sass-graph-2.2.4.tgz#13fbd63cd1caf0908b9fd93476ad43a51d1e0b49"
+    dependencies:
+      glob "^7.0.0"
+      lodash "^4.0.0"
+      scss-tokenizer "^0.2.3"
+      yargs "^7.0.0"
+  
   sass-loader@6.0.6:
     version "6.0.6"
     resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-6.0.6.tgz#e9d5e6c1f155faa32a4b26d7a9b7107c225e40f9"
@@ -5550,6 +5790,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
     dependencies:
       ajv "^5.0.0"
+  
+  scss-tokenizer@^0.2.3:
+    version "0.2.3"
+    resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
+    dependencies:
+      js-base64 "^2.1.8"
+      source-map "^0.4.2"
   
   select-hose@^2.0.0:
     version "2.0.0"
@@ -5817,6 +6064,12 @@ Lockfile:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
   
+  source-map@^0.4.2:
+    version "0.4.4"
+    resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
+    dependencies:
+      amdefine ">=0.0.4"
+  
   source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
     version "0.5.7"
     resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
@@ -5920,6 +6173,12 @@ Lockfile:
   statuses@~1.3.1:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
+  
+  stdout-stream@^1.4.0:
+    version "1.4.0"
+    resolved "https://registry.yarnpkg.com/stdout-stream/-/stdout-stream-1.4.0.tgz#a2c7c8587e54d9427ea9edb3ac3f2cd522df378b"
+    dependencies:
+      readable-stream "^2.0.1"
   
   stream-browserify@^2.0.1:
     version "2.0.1"
@@ -6072,6 +6331,10 @@ Lockfile:
       sax "~1.2.1"
       whet.extend "~0.9.9"
   
+  symbol-observable@^1.0.3:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  
   tapable@^0.2.7, tapable@~0.2.5:
     version "0.2.8"
     resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
@@ -6191,6 +6454,12 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   
+  "true-case-path@^1.0.2":
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-1.0.2.tgz#7ec91130924766c7f573be3020c34f8fdfd00d62"
+    dependencies:
+      glob "^6.0.4"
+  
   tty-browserify@0.0.0:
     version "0.0.0"
     resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
@@ -6200,6 +6469,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
     dependencies:
       safe-buffer "^5.0.1"
+  
+  tunnel-agent@~0.4.1:
+    version "0.4.3"
+    resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.4.3.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
   
   tweetnacl@^0.14.3, tweetnacl@~0.14.0:
     version "0.14.5"
@@ -6421,6 +6694,10 @@ Lockfile:
     version "8.0.0"
     resolved "https://registry.yarnpkg.com/validator/-/validator-8.0.0.tgz#00d6ec230ab5d3353ab1174162a96462b947bdbd"
   
+  value-equal@^0.4.0:
+    version "0.4.0"
+    resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-0.4.0.tgz#c5bdd2f54ee093c04839d71ce2e4758a6890abc7"
+  
   vary@^1, vary@~1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -6442,6 +6719,12 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
     dependencies:
       indexof "0.0.1"
+  
+  warning@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+    dependencies:
+      loose-envify "^1.0.0"
   
   watchpack@^1.3.1:
     version "1.5.0"
@@ -6649,6 +6932,12 @@ Lockfile:
     dependencies:
       camelcase "^3.0.0"
   
+  yargs-parser@^5.0.0:
+    version "5.0.0"
+    resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-5.0.0.tgz#275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a"
+    dependencies:
+      camelcase "^3.0.0"
+  
   yargs-parser@^7.0.0:
     version "7.0.0"
     resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-7.0.0.tgz#8d0ac42f16ea55debd332caf4c4038b3e3f5dfd9"
@@ -6672,6 +6961,24 @@ Lockfile:
       which-module "^1.0.0"
       y18n "^3.2.1"
       yargs-parser "^4.2.0"
+  
+  yargs@^7.0.0:
+    version "7.1.0"
+    resolved "https://registry.yarnpkg.com/yargs/-/yargs-7.1.0.tgz#6ba318eb16961727f5d284f8ea003e8d6154d0c8"
+    dependencies:
+      camelcase "^3.0.0"
+      cliui "^3.2.0"
+      decamelize "^1.1.1"
+      get-caller-file "^1.0.1"
+      os-locale "^1.4.0"
+      read-pkg-up "^1.0.1"
+      require-directory "^2.1.1"
+      require-main-filename "^1.0.1"
+      set-blocking "^2.0.0"
+      string-width "^1.0.2"
+      which-module "^1.0.0"
+      y18n "^3.2.1"
+      yargs-parser "^5.0.0"
   
   yargs@^8.0.2:
     version "8.0.2"
@@ -6701,87 +7008,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: D:\Learn\udemy\node_modules\node-sass: Command failed.
-  Exit code: 1
-  Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c node scripts/build.js
-  Directory: D:\Learn\udemy\node_modules\node-sass
-  Output:
-  Building: C:\Program Files\nodejs\node.exe D:\Learn\udemy\node_modules\node-gyp\bin\node-gyp.js rebuild --verbose --libsass_ext= --libsass_cflags= --libsass_ldflags= --libsass_library=
-  gyp info it worked if it ends with ok
-  gyp verb cli [ 'C:\\Program Files\\nodejs\\node.exe',
-  gyp verb cli   'D:\\Learn\\udemy\\node_modules\\node-gyp\\bin\\node-gyp.js',
-  gyp verb cli   'rebuild',
-  gyp verb cli   '--verbose',
-  gyp verb cli   '--libsass_ext=',
-  gyp verb cli   '--libsass_cflags=',
-  gyp verb cli   '--libsass_ldflags=',
-  gyp verb cli   '--libsass_library=' ]
-  gyp info using node-gyp@3.6.2
-  gyp info using node@9.8.0 | win32 | x64
-  gyp verb command rebuild []
-  gyp verb command clean []
-  gyp verb clean removing "build" directory
-  gyp verb command configure []
-  gyp verb check python checking for Python executable "python2" in the PATH
-  gyp verb `which` failed Error: not found: python2
-  gyp verb `which` failed     at getNotFoundError (D:\Learn\udemy\node_modules\which\which.js:13:12)
-  gyp verb `which` failed     at F (D:\Learn\udemy\node_modules\which\which.js:68:19)
-  gyp verb `which` failed     at E (D:\Learn\udemy\node_modules\which\which.js:80:29)
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\which\which.js:89:16
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\index.js:42:5
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\windows.js:36:5
-  gyp verb `which` failed     at FSReqWrap.oncomplete (fs.js:170:21)
-  gyp verb `which` failed  python2 { Error: not found: python2
-  gyp verb `which` failed     at getNotFoundError (D:\Learn\udemy\node_modules\which\which.js:13:12)
-  gyp verb `which` failed     at F (D:\Learn\udemy\node_modules\which\which.js:68:19)
-  gyp verb `which` failed     at E (D:\Learn\udemy\node_modules\which\which.js:80:29)
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\which\which.js:89:16
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\index.js:42:5
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\windows.js:36:5
-  gyp verb `which` failed     at FSReqWrap.oncomplete (fs.js:170:21)
-  gyp verb `which` failed   stack: 'Error: not found: python2\n    at getNotFoundError (D:\\Learn\\udemy\\node_modules\\which\\which.js:13:12)\n    at F (D:\\Learn\\udemy\\node_modules\\which\\which.js:68:19)\n    at E (D:\\Learn\\udemy\\node_modules\\which\\which.js:80:29)\n    at D:\\Learn\\udemy\\node_modules\\which\\which.js:89:16\n    at D:\\Learn\\udemy\\node_modules\\isexe\\index.js:42:5\n    at D:\\Learn\\udemy\\node_modules\\isexe\\windows.js:36:5\n    at FSReqWrap.oncomplete (fs.js:170:21)',
-  gyp verb `which` failed   code: 'ENOENT' }
-  gyp verb check python checking for Python executable "python" in the PATH
-  gyp verb `which` failed Error: not found: python
-  gyp verb `which` failed     at getNotFoundError (D:\Learn\udemy\node_modules\which\which.js:13:12)
-  gyp verb `which` failed     at F (D:\Learn\udemy\node_modules\which\which.js:68:19)
-  gyp verb `which` failed     at E (D:\Learn\udemy\node_modules\which\which.js:80:29)
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\which\which.js:89:16
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\index.js:42:5
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\windows.js:36:5
-  gyp verb `which` failed     at FSReqWrap.oncomplete (fs.js:170:21)
-  gyp verb `which` failed  python { Error: not found: python
-  gyp verb `which` failed     at getNotFoundError (D:\Learn\udemy\node_modules\which\which.js:13:12)
-  gyp verb `which` failed     at F (D:\Learn\udemy\node_modules\which\which.js:68:19)
-  gyp verb `which` failed     at E (D:\Learn\udemy\node_modules\which\which.js:80:29)
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\which\which.js:89:16
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\index.js:42:5
-  gyp verb `which` failed     at D:\Learn\udemy\node_modules\isexe\windows.js:36:5
-  gyp verb `which` failed     at FSReqWrap.oncomplete (fs.js:170:21)
-  gyp verb `which` failed   stack: 'Error: not found: python\n    at getNotFoundError (D:\\Learn\\udemy\\node_modules\\which\\which.js:13:12)\n    at F (D:\\Learn\\udemy\\node_modules\\which\\which.js:68:19)\n    at E (D:\\Learn\\udemy\\node_modules\\which\\which.js:80:29)\n    at D:\\Learn\\udemy\\node_modules\\which\\which.js:89:16\n    at D:\\Learn\\udemy\\node_modules\\isexe\\index.js:42:5\n    at D:\\Learn\\udemy\\node_modules\\isexe\\windows.js:36:5\n    at FSReqWrap.oncomplete (fs.js:170:21)',
-  gyp verb `which` failed   code: 'ENOENT' }
-  gyp verb could not find "python". checking python launcher 
-  gyp verb could not find "python". guessing location 
-  gyp verb ensuring that file exists: C:\Python27\python.exe
-  gyp ERR! configure error 
-  gyp ERR! stack Error: Can't find Python executable "python", you can set the PYTHON env variable.
-  gyp ERR! stack     at PythonFinder.failNoPython (D:\Learn\udemy\node_modules\node-gyp\lib\configure.js:483:19)
-  gyp ERR! stack     at PythonFinder.<anonymous> (D:\Learn\udemy\node_modules\node-gyp\lib\configure.js:508:16)
-  gyp ERR! stack     at D:\Learn\udemy\node_modules\graceful-fs\polyfills.js:284:29
-  gyp ERR! stack     at FSReqWrap.oncomplete (fs.js:170:21)
-  gyp ERR! System Windows_NT 10.0.16299
-  gyp ERR! command "C:\\Program Files\\nodejs\\node.exe" "D:\\Learn\\udemy\\node_modules\\node-gyp\\bin\\node-gyp.js" "rebuild" "--verbose" "--libsass_ext=" "--libsass_cflags=" "--libsass_ldflags=" "--libsass_library="
-  gyp ERR! cwd D:\Learn\udemy\node_modules\node-sass
-  gyp ERR! node -v v9.8.0
-  gyp ERR! node-gyp -v v3.6.2
-  gyp ERR! not ok 
-  Build failed with error code: 1
-      at ProcessTermError.MessageError (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
-      at ChildProcess.emit (events.js:180:13)
-      at maybeClose (internal/child_process.js:936:16)
-      at Socket.stream.socket.on (internal/child_process.js:353:11)
-      at Socket.emit (events.js:180:13)
-      at Pipe._handle.close [as _onclose] (net.js:538:12)
+  Error: Command "dev-sever" not found. Did you mean "dev-server"?
+      at new MessageError (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
+      at C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:23451:28)
+      at C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:95:12
+      at runCommand (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:87312:22)
+      at Object.<anonymous> (C:\Users\Jurko Banzaj\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:87412:14)

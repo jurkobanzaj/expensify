@@ -1,26 +1,6 @@
 import { createStore } from 'redux';
 
-// const add = (data) => {
-//     return data.a + data.b;
-// };
-// console.log(add({ a: 1, b: 12 }));
-
-// // Restructured:
-
-// const addR = ({ a, b }, c) => {
-//     return a + b + c;
-// };
-
-// console.log(addR({ a: 2, b: 14 }, 100));
-
-// Action Generator setup:
-// const incrementCount = (payload = {}) => ({
-//     type: 'INCREMENT',
-//     incrementBy: typeof payload.incrementBy === 'number' ? payload.incrementBy : 1
-// });
-
-// Restructured Action Generator:
-const incrementCount = ({ incrementBy = 1 } = {}) => ({
+const incrementCount = ({ incrementBy = 1 } = {}) => ({ // Generates Action
     type: 'INCREMENT',
     incrementBy
 });
@@ -34,21 +14,24 @@ const reset = () => ({
     type: 'RESET'
 });
 
-const set = ({ count = 0 } = {}) =>({
+const set = ({ count }) =>({
     type: 'SET',
     count
 });
  
-// Store setup. Store refers to actions
-const store = createStore((state = { count: 0 }, action) => {
-    switch (action.type) { // activates action search for keyword
-        case 'INCREMENT': // marks target keyword
-            return { // desides what to do
-                count: state.count + action.incrementBy // changing 'count' value
+// Reducers
+// Reducers are pure functions
+// Never change state of action
+
+const countReducer = (state = { count: 0 }, action) => {
+    switch (action.type) { 
+        case 'INCREMENT':
+            return { 
+                count: state.count + action.incrementBy 
             };
         case 'DECREMENT':
             return { 
-                count: state.count - action.decrementBy // looks for decrementBy in action object!!!!
+                count: state.count - action.decrementBy 
             };
         case 'RESET': 
             return { 
@@ -58,19 +41,21 @@ const store = createStore((state = { count: 0 }, action) => {
             return {
                 count: action.count
             }
-            default: // describes dafault action
+            default: 
                 return state;
     }
 
-});
+};
 
-const unsubscribe = store.subscribe(() => { // toggle tracking of state changes when called 
+const store = createStore(countReducer);
+
+const unsubscribe = store.subscribe(() => { 
     console.log(store.getState());
 });
 
-store.dispatch(incrementCount()); // Call of previously declared Action
+store.dispatch(incrementCount());
 
-store.dispatch(incrementCount({ incrementBy: 5 })); // Passing custom data
+store.dispatch(incrementCount({ incrementBy: 5 })); 
 
 store.dispatch(decrementCount());
 
