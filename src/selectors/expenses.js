@@ -1,10 +1,14 @@
+import moment from 'moment';
+
 // Visible expenses
 
-export default (expenses, { text, sortBy, startDate, endDate} ) => {
+export default (expenses, { text, sortBy, startDate, endDate }) => {
     return expenses.filter((expense) => {
-        const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
+        // const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
         // if starDate is not set, item is shown. if set, it checks if createdAt is bigger or equal than startDate
-        const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
+        const createdAtMoment = moment(expense.createdAt);
+        const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
+        const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true;
         const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
 
         return startDateMatch && endDateMatch && textMatch;
