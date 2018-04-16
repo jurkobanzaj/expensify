@@ -32,5 +32,5 @@ export const removeExpense = ({ id } = {}) => ({
 export const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
     id,
-    updates
+    updates // expects to be an object here like updates: {something: 'something'}
 });
