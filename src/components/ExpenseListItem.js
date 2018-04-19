@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 // import { removeExpense } from '../actions/expenses';
 
-const ExpenseListItem = ({ dispatch, description, amount, createdAt, id }) => ( // {} and items! just like that! 
+export const ExpenseListItem = ({ dispatch, description, amount, createdAt, id }) => ( // {} and items! just like that! 
     <div>
         <Link to={`/edit/${id}`} ><h3>{description}</h3></Link> 
         {
