@@ -8,10 +8,9 @@ import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } fro
 import getVisibleExpenses from './selectors/expenses';
 import './styles/Styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
 
 const store = configureStore();
-
-console.log('test');
 
 // store.dispatch(addExpense({ description: 'Water bill', amount: 600, createdAt: 5000 }));
 // store.dispatch(addExpense({ description: 'Gas bill', amount: 1500, createdAt: 7700 }));
