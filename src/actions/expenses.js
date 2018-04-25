@@ -1,4 +1,9 @@
-import uuid from 'uuid';
+import uuid from 'uuid'; // generates uniq id
+
+// component calls action generator
+// action generator returns object
+// component dispatches object
+// redux store changes
 
 // Add expense
 
