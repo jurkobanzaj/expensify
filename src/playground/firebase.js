@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 database.ref('expenses')
-    .on('child_removed', (snapshot) => { // snapshot has removed data
+    .on('child_removed', (snapshot) => { // snapshot has removed data 
         console.log(snapshot.key, snapshot.val());
     });
 
